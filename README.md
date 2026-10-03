@@ -1,44 +1,27 @@
-# Ziventa Motors — Website
+# Ziventa Motors — Website V2
 
-Luxury "liquid glass" redesign of [ziventamotors.com](https://ziventamotors.com) — vehicle, heavy equipment and parts export from Dubai.
-
-Plain HTML/CSS/JS. No build step, no dependencies. Deploy the folder as-is to any static host (GitHub Pages, Netlify, Vercel, cPanel).
+Light, editorial redesign of [ziventamotors.com](https://ziventamotors.com) for the GCC market, in English and Arabic (RTL).
+Plain HTML/CSS/JS — no build step. Hosted with GitHub Pages from `main`.
 
 ## Pages
 
-| Page | Purpose |
+| Page | |
 |---|---|
-| `index.html` | Home — hero, export categories, featured stock, process, global reach, CTA |
-| `inventory.html` | Searchable / filterable stock (`?type=SUV`, `?q=patrol`) |
-| `vehicle.html?id=…` | Vehicle detail with WhatsApp / email quote buttons |
-| `contact.html` | Contact details, map, and quotation form (`?vehicle=…`, `?interest=…`) |
+| `index.html` | Home: rotating hero, flagship stock, brands, services, GCC delivery, how it works |
+| `inventory.html` | All 34 vehicles with search, make, condition and body-type filters (`?type=SUV`, `?make=Lexus`) |
+| `vehicle.html?id=…` | Photo gallery, specs, WhatsApp / email / call |
+| `contact.html` | Quotation form (GCC country codes) that sends via WhatsApp or email, plus map |
 
-## Editing content
+Add `?lang=ar` or use the **عربي / EN** button to switch language.
 
-Everything lives in **`assets/js/data.js`**:
+## Editing
 
-- `SITE` — phone, WhatsApp number, email, address, hours, social links
-- `INVENTORY` — vehicles. Set `price` (USD number) or leave `null` for "On request".
-  Add photos with `image: "assets/img/patrol.jpg"` (card/hero) and
-  `images: ["…", "…"]` (detail-page gallery). Without photos a styled silhouette is shown.
-- `CATEGORIES`, `MAKES` — home page tiles and brand marquee
+- **`assets/js/data.js`** — business details (`SITE`), GCC markets, hero cars, and `LISTINGS` (vehicles + photo URLs).
+  Set `featured: true` to show a car on the home page.
+- **`assets/js/i18n.js`** — all English and Arabic text.
+- **`assets/css/styles.css`** — design tokens at the top (colours, fonts, radii).
 
-> Vehicle specs were filled in as indicative values — please confirm against actual stock.
+## Photos
 
-## Quotation form
-
-There's no backend: the form composes the enquiry and opens **WhatsApp** (or the visitor's **email** app) addressed to Ziventa Motors. To collect submissions server-side instead, point the form at a service such as Formspree or a small API.
-
-## Design
-
-- Dark obsidian base with drifting ambient light, so glass surfaces have something to refract
-- Liquid-glass panels: `backdrop-filter` blur + saturation, specular rim, pointer-tracked sheen
-- Champagne-gold accent, *Instrument Serif* display type with *Inter* body
-- Floating pill navigation, scroll reveals, WhatsApp quick-action button
-- Responsive to phone width; respects `prefers-reduced-motion`
-
-## Local preview
-
-```sh
-python3 -m http.server 8000   # then open http://localhost:8000
-```
+Vehicle photos load from the existing `ziventamotors.com/wp-content/uploads/` library, so the old WordPress site
+must stay online. To make the new site independent, copy those files into this repo and replace the URLs in `data.js`.
