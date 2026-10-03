@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ziventa Motors</title>
+  <meta name="description" content="Ziventa Motors — quality new and pre-owned vehicles.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">ZIVENTA<span>MOTORS</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="nav">
+        <a href="#inventory">Inventory</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Drive something remarkable.</h1>
+      <p>Hand-picked new and pre-owned vehicles, honest pricing, and service you can trust.</p>
+      <a href="#inventory" class="btn">Browse inventory</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="inventory" class="section">
+      <div class="container">
+        <h2>Our inventory</h2>
+        <div class="filters">
+          <input type="search" id="search" placeholder="Search make or model…" aria-label="Search">
+          <select id="type" aria-label="Body type">
+            <option value="">All types</option>
+            <option>Sedan</option>
+            <option>SUV</option>
+            <option>Truck</option>
+            <option>Coupe</option>
+          </select>
+          <select id="sort" aria-label="Sort">
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="year-desc">Newest first</option>
+          </select>
+        </div>
+        <p id="count" class="count"></p>
+        <div id="grid" class="grid"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container about">
+        <h2>Why Ziventa?</h2>
+        <div class="features">
+          <div><h3>Inspected</h3><p>Every vehicle passes a multi-point inspection before it reaches our lot.</p></div>
+          <div><h3>Transparent</h3><p>No hidden fees. The price you see is the price you pay.</p></div>
+          <div><h3>Supported</h3><p>Financing help, trade-ins, and after-sale service under one roof.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div>
+          <h2>Book a test drive</h2>
+          <p>Tell us what you're interested in and we'll get back to you within one business day.</p>
+          <p><strong>Hours:</strong> Mon–Sat 9am–7pm</p>
+        </div>
+        <form id="contact-form" novalidate>
+          <label>Name <input name="name" required></label>
+          <label>Email <input name="email" type="email" required></label>
+          <label>Vehicle of interest <select name="vehicle" id="vehicle-select"><option value="">Any</option></select></label>
+          <label>Message <textarea name="message" rows="4"></textarea></label>
+          <button type="submit" class="btn">Send request</button>
+          <p id="form-status" class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Ziventa Motors. All rights reserved.</div>
+  </footer>
+
+  <script src="js/inventory.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
