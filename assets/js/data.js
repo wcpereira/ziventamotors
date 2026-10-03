@@ -15,7 +15,7 @@ const SITE = {
   mapQuery: "Jaffco Roundabout, JAFZA South, Dubai",
   facebook: "https://www.facebook.com/ziventamotors/",
   /* Hero rotation (listing ids). */
-  hero: ["mercedes-benz-g-class-g-63", "lexus-lx600", "land-rover-defender-110-x-dynamic"],
+  hero: ["lexus-lx600", "mercedes-benz-g-class-g-63", "land-rover-defender-110-x-dynamic"],
 };
 
 /* GCC markets served. */
